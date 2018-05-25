@@ -1,0 +1,19 @@
+log = open_xes_log_file("exercise2.xes");
+
+System.out.println("Miningl");
+
+org.processmining.alphaminer.parameters.AlphaMinerParameters params = new org.processmining.alphaminer.parameters.AlphaMinerParameters(org.processmining.alphaminer.parameters.AlphaVersion.CLASSIC);
+
+net_and_marking = org.processmining.alphaminer.plugins.AlphaMinerPlugin.apply(log);
+
+net = net_and_marking[0];
+marking = net_and_marking[1];
+
+System.out.println("Saving);
+
+File net_file = new File("111mined_net.pnml");
+
+pnml_export_petri_net_(net, net_file);
+System.out.println("done");
+
+

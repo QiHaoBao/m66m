@@ -1,0 +1,20 @@
+System.out.println("test");
+log = open_xes_log_file("server.xes");
+
+System.out.println("Creatingings");
+org.processmining.plugins.InductiveMiner.mining.MiningParametersIMi parameters = new org.processmining.plugins.InductiveMiner.mining.MiningParametersIMi();
+//parameters.setNoiseThreshold((float) 0.20);
+
+System.out.println("Callingr");
+//pn_and_marking = mine_petri_net_with_inductive_miner(log);
+pn_and_marking = mine_petri_net_with_inductive_miner_with_parameters(log, parameters);
+
+System.out.println("savs");
+
+File net_file = new File("mined_net_workflow_2.pnml");
+pnml_export_petri_net_(pn_and_marking[0], net_file);
+
+System.out.println("done");
+
+System.exit(0);
+
